@@ -1106,3 +1106,50 @@ h4 { font-size: 1.5rem; }
         margin-bottom: 1.5rem;
     }
 }
+
+/* ============================================
+   WOOCOMMERCE SHOP PAGE FIX - WIDE PRODUCTS
+   ============================================ */
+
+/* Force Product Grid to 3 Wide Columns */
+.woocommerce ul.products {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 3rem !important;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+}
+
+/* Make Product Cards Wide */
+.woocommerce ul.products li.product {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+}
+
+/* Square Product Images */
+.woocommerce ul.products li.product img {
+    width: 100% !important;
+    height: 350px !important;
+    object-fit: cover !important;
+}
+
+/* Remove any width restrictions */
+.woocommerce ul.products li.product,
+.woocommerce ul.products li.product a,
+.woocommerce ul.products li.product .woocommerce-LoopProduct-link {
+    width: 100% !important;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .woocommerce ul.products {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .woocommerce ul.products {
+        grid-template-columns: 1fr !important;
+    }
+}
