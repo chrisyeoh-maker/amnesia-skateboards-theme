@@ -1342,3 +1342,22 @@ h1, h2, h3, h4, h5, h6 {
         padding: 4rem 1rem;
     }
 }
+
+/* HERO CONTAINER - FORCE MAX WIDTH */
+.hero-container {
+    max-width: 1920px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    overflow: hidden !important;
+}
+
+.hero-section {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    background-color: transparent !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    min-height: 600px !important;
+}
