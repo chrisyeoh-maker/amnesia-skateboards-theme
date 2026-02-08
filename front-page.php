@@ -1,10 +1,22 @@
 <?php get_header(); ?>
 
 <!-- Hero Section -->
-<section class="hero-section">
+<?php
+$hero_image = get_theme_mod('hero_background_image', '');
+$hero_title = get_theme_mod('hero_title', 'Amnesia Skateboards');
+$hero_subtitle = get_theme_mod('hero_subtitle', 'Australian skateboard company pushing the boundaries of street skating');
+$hero_overlay = get_theme_mod('hero_overlay', true);
+$overlay_opacity = get_theme_mod('hero_overlay_opacity', 40);
+?>
+
+<section class="hero-section" <?php if ($hero_image) : ?>style="background-image: url('<?php echo esc_url($hero_image); ?>');"<?php endif; ?>>
+    <?php if ($hero_overlay && $hero_image) : ?>
+        <div class="hero-overlay" style="opacity: <?php echo ($overlay_opacity / 100); ?>;"></div>
+    <?php endif; ?>
+    
     <div class="hero-content">
-        <h1>Amnesia Skateboards</h1>
-        <p>Australian skateboard company pushing the boundaries of street skating</p>
+        <h1><?php echo esc_html($hero_title); ?></h1>
+        <p><?php echo esc_html($hero_subtitle); ?></p>
         <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
             <a href="<?php echo esc_url(home_url('/shop')); ?>" class="btn">Shop Now</a>
             <a href="<?php echo esc_url(home_url('/team')); ?>" class="btn btn-outline">Meet The Team</a>
