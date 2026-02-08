@@ -87,7 +87,6 @@ if ($featured_video->have_posts()) :
 ?>
 <section class="featured-video-section">
     <div class="featured-video-content">
-        <h2>Latest Video: <?php the_title(); ?></h2>
         <div class="video-wrapper">
             <?php echo amnesia_get_video_embed($video_url); ?>
         </div>
@@ -112,7 +111,6 @@ $team_members = new WP_Query(array(
 if ($team_members->have_posts()) :
 ?>
 <section class="team-section">
-    <h2>The Team</h2>
     <div class="team-grid">
         <?php while ($team_members->have_posts()) : $team_members->the_post(); ?>
             <div class="team-member">
