@@ -188,7 +188,6 @@ function amnesia_get_video_embed($url) {
     
     return '';
 }
-?>
 
 /**
  * Theme Customizer - Hero Image Upload
@@ -269,3 +268,4 @@ function amnesia_customize_register($wp_customize) {
     ));
 }
 add_action('customize_register', 'amnesia_customize_register');
+?>
