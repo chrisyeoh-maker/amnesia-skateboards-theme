@@ -31,7 +31,7 @@ $overlay_opacity = get_theme_mod('hero_overlay_opacity', 40);
 <section class="content-grid">
     <?php
     $latest_posts = new WP_Query(array(
-        'post_type' => array('post', 'video'),
+        'post_type' => 'post', // Only regular blog posts, not videos
         'posts_per_page' => 6,
         'orderby' => 'date',
         'order' => 'DESC'
