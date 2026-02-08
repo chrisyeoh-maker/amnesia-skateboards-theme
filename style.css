@@ -1153,3 +1153,192 @@ h4 { font-size: 1.5rem; }
         grid-template-columns: 1fr !important;
     }
 }
+
+/* Make Product Images Larger */
+.woocommerce ul.products li.product img {
+    width: 100%;
+    height: auto;
+    min-height: 350px;
+    object-fit: cover;
+}
+
+.woocommerce ul.products li.product .woocommerce-LoopProduct-link {
+    display: block;
+    padding: 0;
+}
+
+/* Better image container */
+.woocommerce ul.products li.product a img {
+    display: block;
+    margin: 0;
+}
+
+/* AMNESIA FONTS - Zine Heritage + Clean Reading */
+
+/* Import Courier Prime for zine vibe */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
+
+/* Body Text - Helvetica-style for easy reading */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* All Headlines - Courier for zine aesthetic */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Logo - Bold Courier */
+.site-logo,
+.site-logo a {
+    font-family: 'Courier Prime', 'Courier New', monospace;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+/* Hero Title - Extra Bold */
+.hero-section h1 {
+    font-family: 'Courier Prime', 'Courier New', monospace;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+/* Navigation - Clean Helvetica */
+.main-navigation a {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+/* Buttons - Courier Impact */
+.btn,
+.woocommerce .button,
+.woocommerce button.button {
+    font-family: 'Courier Prime', 'Courier New', monospace;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* Product Titles - Courier */
+.woocommerce-loop-product__title,
+.product_title,
+.content-card-title {
+    font-family: 'Courier Prime', 'Courier New', monospace;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Product Price - Bold Helvetica */
+.price,
+.woocommerce .price {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 700;
+}
+
+/* Improved Team Page Styling */
+.team-section {
+    padding: 4rem 2rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.team-member {
+    border: 1px solid #e5e5e5;
+    padding: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.team-member:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+.team-member-image {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    margin: 0;
+    border: none;
+}
+
+.team-member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-member-name {
+    padding: 1.5rem 1.5rem 0.5rem;
+    margin: 0;
+}
+
+.team-member-name a {
+    color: #000;
+    text-decoration: none;
+}
+
+.team-member-role {
+    padding: 0 1.5rem 1.5rem;
+    margin: 0;
+    color: #666;
+}
+
+/* Hero Section with Background Image Support */
+.hero-section {
+    background: var(--primary-black); /* Fallback if no image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--primary-white);
+    padding: 8rem 2rem;
+    text-align: center;
+    position: relative;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Dark Overlay */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    z-index: 1;
+}
+
+/* Content Above Overlay */
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Text Shadow for Better Readability */
+.hero-section h1,
+.hero-section p {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 400px;
+        padding: 4rem 1rem;
+    }
+}
