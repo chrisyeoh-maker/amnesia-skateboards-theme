@@ -189,3 +189,83 @@ function amnesia_get_video_embed($url) {
     return '';
 }
 ?>
+
+/**
+ * Theme Customizer - Hero Image Upload
+ */
+function amnesia_customize_register($wp_customize) {
+    
+    // Add Homepage Settings Section
+    $wp_customize->add_section('amnesia_homepage_settings', array(
+        'title'    => __('Homepage Settings', 'amnesia'),
+        'priority' => 30,
+    ));
+    
+    // Hero Background Image
+    $wp_customize->add_setting('hero_background_image', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background_image', array(
+        'label'    => __('Hero Background Image', 'amnesia'),
+        'section'  => 'amnesia_homepage_settings',
+        'settings' => 'hero_background_image',
+        'description' => __('Recommended size: 1920x800px. Best with action skate shots or team photos.', 'amnesia'),
+    )));
+    
+    // Hero Title
+    $wp_customize->add_setting('hero_title', array(
+        'default'           => 'Amnesia Skateboards',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    
+    $wp_customize->add_control('hero_title', array(
+        'label'    => __('Hero Title', 'amnesia'),
+        'section'  => 'amnesia_homepage_settings',
+        'type'     => 'text',
+    ));
+    
+    // Hero Subtitle
+    $wp_customize->add_setting('hero_subtitle', array(
+        'default'           => 'Australian skateboard company pushing the boundaries of street skating',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    
+    $wp_customize->add_control('hero_subtitle', array(
+        'label'    => __('Hero Subtitle', 'amnesia'),
+        'section'  => 'amnesia_homepage_settings',
+        'type'     => 'text',
+    ));
+    
+    // Enable/Disable Overlay
+    $wp_customize->add_setting('hero_overlay', array(
+        'default'           => true,
+        'sanitize_callback' => 'absint',
+    ));
+    
+    $wp_customize->add_control('hero_overlay', array(
+        'label'    => __('Enable Dark Overlay (better text readability)', 'amnesia'),
+        'section'  => 'amnesia_homepage_settings',
+        'type'     => 'checkbox',
+    ));
+    
+    // Overlay Opacity
+    $wp_customize->add_setting('hero_overlay_opacity', array(
+        'default'           => '40',
+        'sanitize_callback' => 'absint',
+    ));
+    
+    $wp_customize->add_control('hero_overlay_opacity', array(
+        'label'       => __('Overlay Darkness (%)', 'amnesia'),
+        'section'     => 'amnesia_homepage_settings',
+        'type'        => 'number',
+        'description' => __('0 = transparent, 100 = fully dark. Recommended: 30-50%', 'amnesia'),
+        'input_attrs' => array(
+            'min'  => 0,
+            'max'  => 100,
+            'step' => 5,
+        ),
+    ));
+}
+add_action('customize_register', 'amnesia_customize_register');
